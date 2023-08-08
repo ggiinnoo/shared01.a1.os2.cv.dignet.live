@@ -1,0 +1,8 @@
+[webservers:children]
+webdb
+
+[dbservers:children]
+webdb
+
+[webdb]
+10.10.0.223 ansible_user=root
