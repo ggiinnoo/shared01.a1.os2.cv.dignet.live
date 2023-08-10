@@ -1,1 +1,1 @@
-# shared01 server dignet
+# shared01.pve.local.dignet.live server dignet

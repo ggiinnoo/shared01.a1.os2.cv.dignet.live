@@ -1,0 +1,12 @@
+---
+
+packages:
+  - name: "htop"
+  - name: "atop"
+  - name: "lsof"
+  - name: "mlocate"
+  - name: "mailutils"
+  - name: "curl"
+  - name: "git"
+  - name: "sudo"
+  - name: "debconf-utils"

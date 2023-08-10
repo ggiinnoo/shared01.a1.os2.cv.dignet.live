@@ -9,3 +9,28 @@ roles:
     scm: git
     version: 1.0.9
     name: ggiinnoo.vhost
+
+  - src: git@github.com:ggiinnoo/ansible-role-php.git
+    scm: git
+    version: 1.4.3
+    name: ggiinnoo.php
+
+  - src: git@github.com:ggiinnoo/ansible-role-packages.git
+    scm: git
+    version: 1.2.1
+    name: ggiinnoo.packages
+
+  - src: git@github.com:ggiinnoo/ansible-role-cron.git
+    scm: git
+    version: 1.2.0
+    name: ggiinnoo.cron
+
+  - src: git@github.com:ggiinnoo/ansible-role-sql.git
+    scm: git
+    version: 1.2.2
+    name: ggiinnoo.sql
+
+  - src: git@github.com:ggiinnoo/ansible-role-users.git
+    scm: git
+    version: 1.2.2
+    name: ggiinnoo.users

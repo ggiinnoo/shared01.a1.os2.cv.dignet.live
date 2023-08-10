@@ -1,0 +1,31 @@
+---
+
+# User structure
+Users:
+  - name: "p_crispmedia"
+    env: production
+    Domains:
+      - name: "crispmedia.nl"
+        docroot: /deployments/current/public/
+        aliases:
+          - www.crispmedia.nl
+    folderStructure:
+      - file: deployments/current
+        state: directory
+
+  - name: "a_crispmedia"
+    env: production
+    Domains:
+      - name: "acc.crispmedia.nl"
+        docroot: /deployments/current/public/
+      - name: "acc.reflectstudio.nl"
+        docroot: /deployments/current/public/
+        removed: true
+    folderStructure:
+      - file: deployments/current
+        state: directory
+
+#serverSignedCertificate: "/etc/pki/tls/private/serversigned.pem"
+
+# web service type
+webService: nginx

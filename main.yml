@@ -1,38 +1,43 @@
 ---
 
 - hosts: webdb
-#  vars_files:
-#    - vars/php.yml
-#    - vars/user.yml
-#    - vars/packages.yml
-#    - vars/mysql.yml
+  vars_files:
+    - vars/php.yml
+    - vars/packages.yml
+    - vars/mysql.yml
+    - vars/users.yml
 #    - vars/scripts.yml
+
   roles:
+    - role: ggiinnoo.packages
+      tags: [packages]
+    - role: ggiinnoo.cron
+      tags: [cron, crons]
+    - role: ggiinnoo.users
+      tags: [user, users, full, web, DB, adduser]
     - role: ggiinnoo.nginx
       nginxConfLocationSrc: "{{ playbook_dir }}/templates/nginx.conf.j2"
       tags: [webserver, full, web]
     - role: ggiinnoo.vhost
       tags: [domain, vhost, full, web, adduser, adddomain, webserver]
+    - role: ggiinnoo.php
+      phpiniConfLocationTemplate82: "{{ playbook_dir }}/templates/php82.ini.j2"
+      tags: [php, full, web, adduser]
+    - role: ggiinnoo.sql
+      mysqlType: "server"
+      mysqlVersion: "80"
+      tags: [sql, full, DB, adduser]
 
-#    - role: ggiinnoo.packages
-#      tags: [packages]
-#    - role: ggiinnoo.users
-#      tags: [user, users, full, web, DB, adduser]
-#    - role: ggiinnoo.sql
-#      mysqlType: "server"
-#      mysqlVersion: "57"
-#      tags: [sql, full, DB, adduser]
-#    - role: ggiinnoo.remi_repo
-#      tags: [remi]
-#    - role: ggiinnoo.php
-#      phpiniConfLocationTemplate74: "{{ playbook_dir }}/templates/php74.ini.j2"
-#      phpiniConfLocationTemplate81: "{{ playbook_dir }}/templates/php81.ini.j2"
-#      tags: [php, full, web, adduser]
+## No debian support ##
+
+## ##
+
+## Check ##
+
+
+
 #    - role: npm
 #      tags: [npm, full, web]
-
-#    - role: ggiinnoo.cron
-#      tags: [cron, crons]
 #    - role: composer
 #      tags: [composer, full, web]
 #    - role: ggiinnoo.scripts
@@ -42,3 +47,6 @@
     - name: creating hosts template
       debug:
         var: "role_names"
+    - name: temp
+      debug:
+        var: "ansible_distribution_major_version"

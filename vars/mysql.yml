@@ -1,0 +1,21 @@
+---
+
+mysqlDatabases:
+  - name: "p_crispmedia"
+  - name: "a_crispmedia"
+
+mysqlUsers:
+  - name: p_crispmedia
+    hosts:
+      - localhost
+      - 127.0.0.1
+    priv:
+      - p_crispmedia.*:ALL
+      - '*.*:SUPER'
+  - name: a_crispmedia
+    hosts:
+      - localhost
+      - 127.0.0.1
+    priv:
+      - a_crispmedia.*:ALL
+      - '*.*:SUPER'
