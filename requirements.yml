@@ -12,7 +12,7 @@ roles:
 
   - src: git@github.com:ggiinnoo/ansible-role-php.git
     scm: git
-    version: 1.4.3
+    version: 1.4.5
     name: ggiinnoo.php
 
   - src: git@github.com:ggiinnoo/ansible-role-packages.git

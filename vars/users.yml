@@ -3,10 +3,11 @@
 # User structure
 Users:
   - name: "p_crispmedia"
+    phpVersion: "82"
     env: production
     Domains:
       - name: "crispmedia.nl"
-        docroot: /deployments/current/public/
+        docroot: /deployments/current/
         aliases:
           - www.crispmedia.nl
     folderStructure:
@@ -14,12 +15,13 @@ Users:
         state: directory
 
   - name: "a_crispmedia"
+    phpVersion: "82"
     env: production
     Domains:
       - name: "acc.crispmedia.nl"
-        docroot: /deployments/current/public/
+        docroot: /deployments/current/
       - name: "acc.reflectstudio.nl"
-        docroot: /deployments/current/public/
+        docroot: /deployments/current/
         removed: true
     folderStructure:
       - file: deployments/current

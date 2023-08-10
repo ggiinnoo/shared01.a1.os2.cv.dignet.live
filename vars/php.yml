@@ -1,6 +1,6 @@
 ---
 
-#phpVersionDefault: 82
+phpVersionDefault: 8.2
 
 php82:
   packages:
@@ -85,10 +85,10 @@ php82:
     - php8.2-zstd
     - php8.2
   fpm:
-    fpmUser: nginx
-    fpmGroup: nginx
-    fpmListenOwner: nginx
-    fpmListenGroup: nginx
+    fpmUser: www-data
+    fpmGroup: www-data
+    fpmListenOwner: www-data
+    fpmListenGroup: www-data
     fpmListenMode: "0660"
     fpmSock: /var/run/php82-fpm.sock
     fpmListenAllowedClients: 127.0.0.1
